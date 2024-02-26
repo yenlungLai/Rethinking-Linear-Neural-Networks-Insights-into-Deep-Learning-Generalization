@@ -1,4 +1,4 @@
-# Shortcut-Learning-Revisitted-On-the-Linear-Seperability-of-Adversarial-Examples
+# Shortcut-Learning-Revisited-On-the-Linear-Seperability-of-Adversarial-Examples
 
 
 Abstract: 
