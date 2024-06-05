@@ -4,7 +4,7 @@ n = 12000;
 k = 2500; % output vector size
 nter = 50;  %number of layer L
 etha = 500;
-j=77; % number of sample in cifar10 dataset
+j=77; % j-th sample in cifar10 dataset
 
 
 outputFolder = fullfile(pwd, 'restored_images'); % Folder to save restored images

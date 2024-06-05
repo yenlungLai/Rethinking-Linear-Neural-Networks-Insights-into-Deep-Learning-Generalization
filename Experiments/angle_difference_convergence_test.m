@@ -4,13 +4,12 @@ clear all
 avgs=[];
 
 
-n=1000;
-k=512; nter=50; %nter is the number of layer L, k is outputsize 512
+n=5000;
+k=3; nter=10; %nter is the number of layer L, k is outputsize 512
 recc=[];
-for jj=1:1000  % generate 1000 random pair
-   [v, u] = generateOrthogonalVectors(k); % generate vector u and v othogonal to each other
-   v=randn(1,512);
-   u=randn(1,512);
+for jj=1:50  % generate 1000 random pair
+   v=randn(1,k);
+   u=randn(1,k);
 
     ii=1;
   
@@ -19,10 +18,11 @@ for jj=1:1000  % generate 1000 random pair
     old_v = v;
 
 
-    pointr=[];
+    
     u = u/norm(u);  % Normalize the vector
     v= v/norm(v);  % Normalize the vector
 
+    pointr=(dot(u, v)); 
 
     initt=acos(dot(u, v))/pi; % compute their initial angle different, uncomment other for eucledian or hamming distances
 %     initt=sum(sign(u)~=sign(v))/512; %compute normalized hamming distance
@@ -78,7 +78,7 @@ for i = 1:numel(pointrR)
 end
 
 xlabel(' $L$', 'Interpreter', 'latex');
-ylabel('$\cos \theta \pi=\frac{ y\cdot{y''}}{||y||||y''||}$', 'Interpreter', 'latex');
+ylabel('$\cos \theta \pi=\frac{ x_{L}\cdot{x''_{L}}}{||x_{L}||||x''_{L}||}$', 'Interpreter', 'latex');
 
 
 ylim([-1, 1]); xlim([1, nter]);
