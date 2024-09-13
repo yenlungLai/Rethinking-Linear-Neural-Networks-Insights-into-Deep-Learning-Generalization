@@ -46,7 +46,7 @@ for jj=1:10  % generate 1000 random pair
         v = v/norm(v);  % Normalize the vector
         
         
-        dis=sum(sign(u)~=sign(v))/512; %computed normalized euclidian distance
+        dis=norm(u-v)^2/4; %computed normalized euclidian distance
       
         pointr=[pointr;dis];
 
